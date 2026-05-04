@@ -18,7 +18,7 @@ body {
   background-color: #f5f5f5;
 }
 
-
+/* ---------- NAVBAR ---------- */
 .navbar {
   padding: 20px 60px;
   display: flex;
@@ -37,9 +37,14 @@ body {
 .logo img {
   width: 50px;
   height: 50px;
+  /* added subtle hover */
+  transition: transform 0.3s ease;
+}
+.logo img:hover {
+  transform: scale(1.1) rotate(-5deg);
 }
 
-
+/* ---------- HERO ---------- */
 .hero {
   background-color: var(--red);
   min-height: 100vh;
@@ -89,11 +94,12 @@ body {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
-
 .btn-primary:hover {
   transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  background: #fff5f5;
 }
 
 .hero-right {
@@ -110,6 +116,10 @@ body {
   border-radius: 23px;
   position: relative;
   z-index: 2;
+  transition: transform 0.3s ease;
+}
+.hero-right img:hover {
+  transform: scale(1.02);
 }
 
 .badge {
@@ -124,6 +134,11 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .badge-top {
@@ -136,7 +151,7 @@ body {
   left: -10px;
 }
 
-
+/* ---------- FEATURES ---------- */
 .features {
   padding: 80px 60px;
   background-color: #f5f5f5;
@@ -172,10 +187,9 @@ body {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .feature-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 24px rgba(175, 82, 15, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(175, 82, 15, 0.15);
 }
 
 .feature-icon {
@@ -196,7 +210,7 @@ body {
   line-height: 1.6;
 }
 
-
+/* ---------- CONNECTION ---------- */
 .connection {
   padding: 80px 60px;
   background-color: #f5f5f5;
@@ -216,6 +230,10 @@ body {
   width: 100%;
   max-width: 500px;
   height: auto;
+  transition: transform 0.3s ease;
+}
+.connection-left img:hover {
+  transform: scale(1.03);
 }
 
 .connection-right {
@@ -252,11 +270,11 @@ body {
   padding: 20px 24px;
   border-radius: 14px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .connection-feature-item:hover {
-  transform: translateX(6px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
 }
 
 .cf-icon {
@@ -277,6 +295,7 @@ body {
   line-height: 1.6;
 }
 
+/* ---------- INSTALL ---------- */
 .install {
   padding: 80px 60px;
   background-color: #f5f5f5;
@@ -320,6 +339,10 @@ body {
   color: var(--red);
   position: relative;
   z-index: 1;
+  transition: transform 0.3s ease;
+}
+.step-number:hover {
+  transform: scale(1.2);
 }
 
 .install-cards {
@@ -336,12 +359,12 @@ body {
   padding: 36px 24px;
   text-align: center;
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
-
 .install-card:hover {
   transform: translateY(-8px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.12);
 }
 
 .install-card h3 {
@@ -356,7 +379,7 @@ body {
   color: var(--gray);
 }
 
-
+/* ---------- DONATE ---------- */
 .donate {
   background-color: var(--red);
   padding: 70px 80px;
@@ -397,14 +420,13 @@ body {
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
-
 .btn-donate:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  background: #fff5f5;
 }
-
 
 .donate-right {
   flex: 1;
@@ -427,6 +449,10 @@ body {
 .donate-phone {
   position: absolute;
   bottom: 0;
+  transition: transform 0.3s ease;
+}
+.donate-phone:hover {
+  transform: scale(1.03);
 }
 
 .donate-phone img {
@@ -443,6 +469,9 @@ body {
   z-index: 1;
   bottom: 0;
 }
+.donate-phone--front:hover {
+  transform: translateX(-80%) scale(1.03);
+}
 
 .donate-phone--back {
   left: 50%;
@@ -450,12 +479,15 @@ body {
   z-index: 2;
   bottom: 20px;
 }
+.donate-phone--back:hover {
+  transform: translateX(0%) scale(1.03);
+}
 
 .donate-phone--back img {
   width: 240px;
 }
 
-
+/* ---------- TESTIMONIALS ---------- */
 .testimonials {
   padding: 80px 60px;
   background-color: #ebebeb;
@@ -495,10 +527,9 @@ body {
   text-align: left;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
-
 .review-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px);
 }
 
 .review-card--invisible {
@@ -569,15 +600,15 @@ body {
   font-weight: 800;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, background 0.2s ease;
 }
-
 .btn-see-more:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.13);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
+  background: #fff0f0;
 }
 
-
+/* ---------- FOOTER CTA ---------- */
 .footer-cta {
   background: linear-gradient(135deg, #FF6B5B, #FF4D4D);
   border-radius: 32px;
@@ -631,13 +662,13 @@ body {
   padding: 12px 22px;
   border-radius: 50px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
   min-width: 160px;
 }
-
 .store-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+  background: #fff0f0;
 }
 
 .store-icon {
@@ -665,7 +696,6 @@ body {
   line-height: 1.2;
 }
 
-
 .footer-cta-right {
   flex: 1;
   position: relative;
@@ -676,6 +706,10 @@ body {
 .footer-phone {
   position: absolute;
   bottom: -60px;
+  transition: transform 0.3s ease;
+}
+.footer-phone:hover {
+  transform: scale(1.05);
 }
 
 .footer-phone img {
@@ -684,7 +718,6 @@ body {
   display: block;
   box-shadow: 0 24px 60px rgba(0,0,0,0.3);
 }
-
 
 .footer-phone--front {
   left: 30px;
@@ -696,7 +729,6 @@ body {
   height: 320px;
 }
 
-
 .footer-phone--back {
   right: 20px;
   bottom: -60px;
@@ -707,9 +739,8 @@ body {
   height: 400px;
 }
 
-
+/* ===== RESPONSIVE (unchanged except hover still applies) ===== */
 @media (max-width: 1024px) {
-
   .hero {
     padding: 0 40px;
   }
@@ -720,7 +751,6 @@ body {
     width: 260px;
   }
 
-  
   .features {
     padding: 60px 40px;
   }
@@ -728,7 +758,6 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  
   .connection {
     padding: 60px 40px;
     gap: 40px;
@@ -737,12 +766,10 @@ body {
     font-size: 32px;
   }
 
-  
   .install {
     padding: 60px 40px;
   }
 
-  
   .donate {
     padding: 60px 50px;
     margin: 30px 30px;
@@ -758,7 +785,6 @@ body {
     width: 200px;
   }
 
- 
   .testimonials {
     padding: 60px 40px;
   }
@@ -782,8 +808,6 @@ body {
 }
 
 @media (max-width: 768px) {
-
-  
   .hero {
     padding: 0 24px;
     min-height: auto;
@@ -826,7 +850,6 @@ body {
     left: 0px;
   }
 
-  
   .features {
     padding: 50px 24px;
   }
@@ -838,7 +861,6 @@ body {
     gap: 16px;
   }
 
-  
   .connection {
     flex-direction: column;
     padding: 50px 24px;
@@ -858,7 +880,6 @@ body {
     transform: none;
   }
 
-  
   .install {
     padding: 50px 24px;
   }
@@ -879,7 +900,6 @@ body {
     padding: 24px 20px;
   }
 
-  
   .donate {
     flex-direction: column;
     padding: 50px 28px 300px;
@@ -910,7 +930,6 @@ body {
     width: 155px;
   }
 
-  /* TESTIMONIALS */
   .testimonials {
     padding: 50px 24px;
   }
@@ -926,7 +945,6 @@ body {
     display: none;
   }
 
-  /* FOOTER CTA */
   .footer-cta {
     flex-direction: column;
     padding: 50px 28px 320px;
@@ -947,7 +965,6 @@ body {
   }
   .footer-cta-right {
     width: 100%;
-    
     position: relative;
   }
   .footer-phone--front {
@@ -966,10 +983,7 @@ body {
   }
 }
 
-
 @media (max-width: 480px) {
-
-
   .hero-left h1 {
     font-size: 28px;
   }
@@ -981,38 +995,31 @@ body {
     padding: 8px 14px;
   }
 
-  
   .features-header h2 {
     font-size: 24px;
   }
-
 
   .connection-right h2 {
     font-size: 24px;
   }
 
- 
   .install-header h2 {
     font-size: 24px;
   }
- .donate{
-   height: 80vh;
- }
-  
+  .donate{
+    height: 80vh;
+  }
   .donate-left h2 {
     font-size: 26px;
   }
 
- 
-.testimonials{
-  padding: 10px 4px;
-}
-
+  .testimonials{
+    padding: 10px 4px;
+  }
   .testimonials-title {
     font-size: 24px;
   }
 
-  
   .footer-cta-left h2 {
     font-size: 26px;
   }
@@ -1022,7 +1029,6 @@ body {
   }
   .store-text strong {
     font-size: 14px;
-    
   }
   .footer-phone--front img {
     height: 190px;
@@ -1032,7 +1038,6 @@ body {
   }
   .footer-cta-right {
     width: 100%;
-    
     position: relative;
   }
 }
