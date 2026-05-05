@@ -12,13 +12,19 @@
   --white: #ffffff;
 }
 
+/* Fix horizontal scroll globally */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
   color: var(--dark);
   background-color: #f5f5f5;
 }
 
-/* ---------- NAVBAR ---------- */
+/* ===== NAVBAR ===== */
 .navbar {
   padding: 20px 60px;
   display: flex;
@@ -30,21 +36,16 @@ body {
   align-items: center;
   gap: 10px;
   color: rgb(255, 255, 255);
-  font-size: 44px;
+  font-size: 22px;
   font-weight: bold;
 }
 
 .logo img {
-  width: 50px;
-  height: 50px;
-  /* added subtle hover */
-  transition: transform 0.3s ease;
-}
-.logo img:hover {
-  transform: scale(1.1) rotate(-5deg);
+  width: 30px;
+  height: 30px;
 }
 
-/* ---------- HERO ---------- */
+/* ===== HERO ===== */
 .hero {
   background-color: var(--red);
   min-height: 100vh;
@@ -52,6 +53,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .hero-content {
@@ -60,7 +62,6 @@ body {
   justify-content: space-between;
   gap: 40px;
   flex: 1;
-  margin-top: 39px;
 }
 
 .hero-left {
@@ -94,12 +95,13 @@ body {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  will-change: transform;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .btn-primary:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  background: #fff5f5;
+  transform: scale(1.07) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
 }
 
 .hero-right {
@@ -116,10 +118,6 @@ body {
   border-radius: 23px;
   position: relative;
   z-index: 2;
-  transition: transform 0.3s ease;
-}
-.hero-right img:hover {
-  transform: scale(1.02);
 }
 
 .badge {
@@ -134,11 +132,6 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.badge:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .badge-top {
@@ -151,7 +144,7 @@ body {
   left: -10px;
 }
 
-/* ---------- FEATURES ---------- */
+/* ===== FEATURES ===== */
 .features {
   padding: 80px 60px;
   background-color: #f5f5f5;
@@ -185,11 +178,13 @@ body {
   padding: 36px 24px;
   text-align: center;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  will-change: transform;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .feature-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 28px rgba(175, 82, 15, 0.15);
+  transform: translateY(-8px) !important;
+  box-shadow: 0 12px 30px rgba(255, 77, 77, 0.15) !important;
 }
 
 .feature-icon {
@@ -210,7 +205,7 @@ body {
   line-height: 1.6;
 }
 
-/* ---------- CONNECTION ---------- */
+/* ===== CONNECTION ===== */
 .connection {
   padding: 80px 60px;
   background-color: #f5f5f5;
@@ -230,10 +225,6 @@ body {
   width: 100%;
   max-width: 500px;
   height: auto;
-  transition: transform 0.3s ease;
-}
-.connection-left img:hover {
-  transform: scale(1.03);
 }
 
 .connection-right {
@@ -270,11 +261,13 @@ body {
   padding: 20px 24px;
   border-radius: 14px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  will-change: transform;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .connection-feature-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+  transform: translateX(8px) !important;
+  box-shadow: 0 6px 20px rgba(255, 77, 77, 0.12) !important;
 }
 
 .cf-icon {
@@ -295,7 +288,7 @@ body {
   line-height: 1.6;
 }
 
-/* ---------- INSTALL ---------- */
+/* ===== INSTALL ===== */
 .install {
   padding: 80px 60px;
   background-color: #f5f5f5;
@@ -339,10 +332,6 @@ body {
   color: var(--red);
   position: relative;
   z-index: 1;
-  transition: transform 0.3s ease;
-}
-.step-number:hover {
-  transform: scale(1.2);
 }
 
 .install-cards {
@@ -359,12 +348,14 @@ body {
   padding: 36px 24px;
   text-align: center;
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  will-change: transform;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
+
 .install-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+  transform: translateY(-10px) !important;
+  box-shadow: 0 16px 32px rgba(255, 77, 77, 0.15) !important;
 }
 
 .install-card h3 {
@@ -379,7 +370,9 @@ body {
   color: var(--gray);
 }
 
-/* ---------- DONATE ---------- */
+/* ===================================
+   DONATE SECTION
+   =================================== */
 .donate {
   background-color: var(--red);
   padding: 70px 80px;
@@ -389,6 +382,7 @@ body {
   gap: 60px;
   border-radius: 32px;
   margin: 40px 40px;
+  overflow: hidden;
 }
 
 .donate-left {
@@ -420,12 +414,13 @@ body {
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  will-change: transform;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .btn-donate:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-  background: #fff5f5;
+  transform: scale(1.07) !important;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.25) !important;
 }
 
 .donate-right {
@@ -449,10 +444,6 @@ body {
 .donate-phone {
   position: absolute;
   bottom: 0;
-  transition: transform 0.3s ease;
-}
-.donate-phone:hover {
-  transform: scale(1.03);
 }
 
 .donate-phone img {
@@ -469,9 +460,6 @@ body {
   z-index: 1;
   bottom: 0;
 }
-.donate-phone--front:hover {
-  transform: translateX(-80%) scale(1.03);
-}
 
 .donate-phone--back {
   left: 50%;
@@ -479,15 +467,14 @@ body {
   z-index: 2;
   bottom: 20px;
 }
-.donate-phone--back:hover {
-  transform: translateX(0%) scale(1.03);
-}
 
 .donate-phone--back img {
   width: 240px;
 }
 
-/* ---------- TESTIMONIALS ---------- */
+/* ===================================
+   TESTIMONIALS SECTION
+   =================================== */
 .testimonials {
   padding: 80px 60px;
   background-color: #ebebeb;
@@ -525,11 +512,13 @@ body {
   gap: 14px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   text-align: left;
+  will-change: transform;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
+
 .review-card:hover {
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
-  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
+  transform: translateY(-6px) !important;
 }
 
 .review-card--invisible {
@@ -599,16 +588,19 @@ body {
   font-size: 1rem;
   font-weight: 800;
   cursor: pointer;
+  will-change: transform;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
-  transition: box-shadow 0.2s ease, transform 0.2s ease, background 0.2s ease;
-}
-.btn-see-more:hover {
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
-  background: #fff0f0;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-/* ---------- FOOTER CTA ---------- */
+.btn-see-more:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-3px) !important;
+}
+
+/* ===================================
+   FOOTER CTA SECTION
+   =================================== */
 .footer-cta {
   background: linear-gradient(135deg, #FF6B5B, #FF4D4D);
   border-radius: 32px;
@@ -662,18 +654,21 @@ body {
   padding: 12px 22px;
   border-radius: 50px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  will-change: transform;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   min-width: 160px;
 }
+
 .store-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.2);
-  background: #fff0f0;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.22) !important;
 }
 
 .store-icon {
   font-size: 24px;
   line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
 .store-text {
@@ -706,10 +701,6 @@ body {
 .footer-phone {
   position: absolute;
   bottom: -60px;
-  transition: transform 0.3s ease;
-}
-.footer-phone:hover {
-  transform: scale(1.05);
 }
 
 .footer-phone img {
@@ -739,83 +730,47 @@ body {
   height: 400px;
 }
 
-/* ===== RESPONSIVE (unchanged except hover still applies) ===== */
+/* ===================================
+   RESPONSIVE - TABLET (max-width: 1024px)
+   =================================== */
 @media (max-width: 1024px) {
-  .hero {
-    padding: 0 40px;
-  }
-  .hero-left h1 {
-    font-size: 40px;
-  }
-  .hero-right img {
-    width: 260px;
-  }
 
-  .features {
-    padding: 60px 40px;
-  }
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .hero { padding: 0 40px; }
+  .hero-left h1 { font-size: 40px; }
+  .hero-right img { width: 260px; }
 
-  .connection {
-    padding: 60px 40px;
-    gap: 40px;
-  }
-  .connection-right h2 {
-    font-size: 32px;
-  }
+  .features { padding: 60px 40px; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
 
-  .install {
-    padding: 60px 40px;
-  }
+  .connection { padding: 60px 40px; gap: 40px; }
+  .connection-right h2 { font-size: 32px; }
 
-  .donate {
-    padding: 60px 50px;
-    margin: 30px 30px;
-    gap: 40px;
-  }
-  .donate-left h2 {
-    font-size: 36px;
-  }
-  .donate-phone img {
-    width: 180px;
-  }
-  .donate-phone--back img {
-    width: 200px;
-  }
+  .install { padding: 60px 40px; }
 
-  .testimonials {
-    padding: 60px 40px;
-  }
-  .testimonials-title {
-    font-size: 34px;
-  }
+  .donate { padding: 60px 50px; margin: 30px; gap: 40px; }
+  .donate-left h2 { font-size: 36px; }
+  .donate-phone img { width: 180px; }
+  .donate-phone--back img { width: 200px; }
 
-  .footer-cta {
-    padding: 50px 50px;
-    margin: 0 30px 50px;
-  }
-  .footer-cta-left h2 {
-    font-size: 36px;
-  }
-  .footer-phone--front img {
-    height: 260px;
-  }
-  .footer-phone--back img {
-    height: 330px;
-  }
+  .testimonials { padding: 60px 40px; }
+  .testimonials-title { font-size: 34px; }
+
+  .footer-cta { padding: 50px; margin: 0 30px 50px; }
+  .footer-cta-left h2 { font-size: 36px; }
+  .footer-phone--front img { height: 260px; }
+  .footer-phone--back img { height: 330px; }
 }
 
+/* ===================================
+   RESPONSIVE - MOBILE (max-width: 768px)
+   =================================== */
 @media (max-width: 768px) {
+
   .hero {
-    padding: 0 24px;
+    padding: 0 24px 60px;
     min-height: auto;
-    padding-bottom: 60px;
   }
-  .navbar {
-    padding: 20px 24px;
-  }
+  .navbar { padding: 20px 24px; }
   .hero-content {
     flex-direction: column;
     align-items: center;
@@ -823,82 +778,30 @@ body {
     gap: 40px;
     padding-top: 20px;
   }
-  .hero-left {
-    top: 0;
-    max-width: 100%;
-    order: 1;
-  }
-  .hero-left h1 {
-    font-size: 34px;
-  }
-  .hero-left p {
-    font-size: 14px;
-  }
-  .hero-right {
-    order: 2;
-    width: 100%;
-  }
-  .hero-right img {
-    width: 220px;
-  }
-  .badge-top {
-    top: 10px;
-    right: 0px;
-  }
-  .badge-bottom {
-    bottom: 10px;
-    left: 0px;
-  }
+  .hero-left { top: 0; max-width: 100%; order: 1; }
+  .hero-left h1 { font-size: 34px; }
+  .hero-left p { font-size: 14px; }
+  .hero-right { order: 2; width: 100%; }
+  .hero-right img { width: 220px; }
+  .badge-top { top: 10px; right: 0; }
+  .badge-bottom { bottom: 10px; left: 0; }
 
-  .features {
-    padding: 50px 24px;
-  }
-  .features-header h2 {
-    font-size: 28px;
-  }
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
+  .features { padding: 50px 24px; }
+  .features-header h2 { font-size: 28px; }
+  .features-grid { grid-template-columns: 1fr; gap: 16px; }
 
-  .connection {
-    flex-direction: column;
-    padding: 50px 24px;
-    gap: 30px;
-    text-align: center;
-  }
-  .connection-left img {
-    max-width: 300px;
-  }
-  .connection-right {
-    max-width: 100%;
-  }
-  .connection-right h2 {
-    font-size: 28px;
-  }
-  .connection-feature-item:hover {
-    transform: none;
-  }
+  .connection { flex-direction: column; padding: 50px 24px; gap: 30px; text-align: center; }
+  .connection-left img { max-width: 280px; }
+  .connection-right { max-width: 100%; }
+  .connection-right h2 { font-size: 28px; }
+  /* disable slide hover on touch */
+  .connection-feature-item:hover { transform: none !important; }
 
-  .install {
-    padding: 50px 24px;
-  }
-  .install-header h2 {
-    font-size: 28px;
-  }
-  .install-steps {
-    gap: 0;
-  }
-  .step-number {
-    font-size: 28px;
-  }
-  .install-cards {
-    flex-direction: column;
-    gap: 16px;
-  }
-  .install-card {
-    padding: 24px 20px;
-  }
+  .install { padding: 50px 24px; }
+  .install-header h2 { font-size: 28px; }
+  .step-number { font-size: 28px; }
+  .install-cards { flex-direction: column; gap: 16px; }
+  .install-card { padding: 24px 20px; }
 
   .donate {
     flex-direction: column;
@@ -908,42 +811,18 @@ body {
     border-radius: 24px;
     text-align: center;
     align-items: center;
-    height: 90vh;
   }
-  .donate-left {
-    max-width: 100%;
-  }
-  .donate-left h2 {
-    font-size: 30px;
-  }
-  .donate-right {
-    width: 100%;
-    min-height: 280px;
-  }
-  .donate-phones {
-    height: 280px;
-  }
-  .donate-phone img {
-    width: 140px;
-  }
-  .donate-phone--back img {
-    width: 155px;
-  }
+  .donate-left { max-width: 100%; }
+  .donate-left h2 { font-size: 30px; }
+  .donate-right { width: 100%; min-height: 280px; }
+  .donate-phones { height: 280px; }
+  .donate-phone img { width: 140px; }
+  .donate-phone--back img { width: 155px; }
 
-  .testimonials {
-    padding: 50px 24px;
-  }
-  .testimonials-title {
-    font-size: 28px;
-    margin-bottom: 30px;
-  }
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .testimonials-faded {
-    display: none;
-  }
+  .testimonials { padding: 50px 24px; }
+  .testimonials-title { font-size: 28px; margin-bottom: 30px; }
+  .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
+  .testimonials-faded { display: none; }
 
   .footer-cta {
     flex-direction: column;
@@ -954,90 +833,34 @@ body {
     overflow: visible;
     align-items: center;
   }
-  .footer-cta-left {
-    max-width: 100%;
-  }
-  .footer-cta-left h2 {
-    font-size: 30px;
-  }
-  .footer-cta-buttons {
-    justify-content: center;
-  }
-  .footer-cta-right {
-    width: 100%;
-    position: relative;
-  }
-  .footer-phone--front {
-    left: 10px;
-    bottom: -260px;
-  }
-  .footer-phone--front img {
-    height: 220px;
-  }
-  .footer-phone--back {
-    right: 10px;
-    bottom: -250px;
-  }
-  .footer-phone--back img {
-    height: 270px;
-  }
+  .footer-cta-left { max-width: 100%; }
+  .footer-cta-left h2 { font-size: 30px; }
+  .footer-cta-buttons { justify-content: center; }
+  .footer-cta-right { width: 100%; min-height: 300px; position: relative; }
+  .footer-phone--front { left: 10px; bottom: -260px; }
+  .footer-phone--front img { height: 220px; }
+  .footer-phone--back { right: 10px; bottom: -250px; }
+  .footer-phone--back img { height: 270px; }
 }
 
+/* ===================================
+   RESPONSIVE - SMALL MOBILE (max-width: 480px)
+   =================================== */
 @media (max-width: 480px) {
-  .hero-left h1 {
-    font-size: 28px;
-  }
-  .hero-right img {
-    width: 180px;
-  }
-  .badge {
-    font-size: 11px;
-    padding: 8px 14px;
-  }
 
-  .features-header h2 {
-    font-size: 24px;
-  }
+  .hero-left h1 { font-size: 28px; }
+  .hero-right img { width: 180px; }
+  .badge { font-size: 11px; padding: 8px 14px; }
 
-  .connection-right h2 {
-    font-size: 24px;
-  }
+  .features-header h2 { font-size: 24px; }
+  .connection-right h2 { font-size: 24px; }
+  .install-header h2 { font-size: 24px; }
+  .donate-left h2 { font-size: 26px; }
+  .testimonials-title { font-size: 24px; }
 
-  .install-header h2 {
-    font-size: 24px;
-  }
-  .donate{
-    height: 80vh;
-  }
-  .donate-left h2 {
-    font-size: 26px;
-  }
-
-  .testimonials{
-    padding: 10px 4px;
-  }
-  .testimonials-title {
-    font-size: 24px;
-  }
-
-  .footer-cta-left h2 {
-    font-size: 26px;
-  }
-  .store-btn {
-    min-width: 140px;
-    padding: 10px 16px;
-  }
-  .store-text strong {
-    font-size: 14px;
-  }
-  .footer-phone--front img {
-    height: 190px;
-  }
-  .footer-phone--back img {
-    height: 230px;
-  }
-  .footer-cta-right {
-    width: 100%;
-    position: relative;
-  }
+  .footer-cta-left h2 { font-size: 26px; }
+  .store-btn { min-width: 130px; padding: 10px 14px; }
+  .store-text strong { font-size: 14px; }
+  .footer-phone--front img { height: 190px; }
+  .footer-phone--back img { height: 230px; }
 }
